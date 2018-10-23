@@ -1,0 +1,29 @@
+<form (submit)="onSubmit($event)" id="form">
+  <div class="modal-header">
+    <h2 class="modal-title">THÊM MENU</h2>
+    <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row col-md-12">
+      <div class="col-md-12">
+        <dx-form validationGroup="menuValidate" [colCount]="2" [formData]="menu" [readOnly]="false"
+          [showColonAfterLabel]="true" [showValidationSummary]="true">
+          <dxi-item [colSpan]="2" [label]="{text: 'Tên menu'}" dataField="name">
+            <dxi-validation-rule type="required" message="Tên menu không được để trống">
+            </dxi-validation-rule>
+          </dxi-item>
+          <dxi-item [colSpan]="1" [label]="{text: 'Số thứ tự'}" dataField="order">
+          </dxi-item>
+        </dx-form>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <dx-button text="Ghi" type="default" validationGroup="menuValidate" [useSubmitBehavior]="true">
+    </dx-button>
+    <dx-button text="Quay lại" (click)="bsModalRef.hide()">
+    </dx-button>
+  </div>
+</form>

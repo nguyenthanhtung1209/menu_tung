@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-6" style="padding-top: 10px;">
+    <span style="padding-left: 15px;">Màn hình danh sách menu</span>
+  </div>
+  <div class="col-md-6" style="padding-top: 10px;padding-bottom: 10px;">
+    <div class="pull-right button-panel">
+      <dx-button (onClick)="add()" id="add" icon="fa fa-plus" text="Thêm menu"></dx-button>
+      <dx-button (onClick)="deletes()" [disabled]="!selectedRowKeys.length" id="delete" icon="fa fa-trash" text="Xóa"></dx-button>
+    </div>
+  </div>
+</div>
+<div id="tree-list-demo">
+  <dx-tree-list id="listmenu" [dataSource]="menuModel.listmenu" keyExpr="id" parentIdExpr="id_parent" [showRowLines]="true"
+    [showBorders]="true" [columnAutoWidth]="true" (onSelectionChanged)="selectMenu($event)" (onRowInserted)="insert($event)" (onRowUpdated)="update($event)"
+    (onRowRemoving)="delete($event)">
+    <dxo-selection mode="multiple">
+    </dxo-selection>
+    <dxo-editing mode="row" [allowUpdating]="true" [allowAdding]="true">
+    </dxo-editing>
+
+    <dxi-column dataField="name" caption="Tên menu">
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="id_parent" caption="Menu cha">
+      <dxo-lookup [dataSource]="lookupData" valueExpr="id" displayExpr="name">
+      </dxo-lookup>
+      <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-column>
+  </dx-tree-list>
+</div>

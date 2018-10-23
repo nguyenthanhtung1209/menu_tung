@@ -1,0 +1,24 @@
+<header class="app-header navbar {{class_header}}">
+  <button class="navbar-toggler d-md-down-none mr-auto" type="button" appSidebarMinimizer appMobileSidebarToggler>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="hty-header-banner d-md-down-none">
+    <p class="first-text">CÔNG TY CỔ PHẦN</p>
+    <p class="second-text">HỆ THỐNG QUẢN TRỊ SYSTEM</p>
+  </div>
+  <ul class="nav navbar-nav ml-auto" style="margin-right: 12px;">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle
+        (click)="false">
+        <img src="assets/img/avatars/man.png" class="img-avatar" alt="admin@bootstrapmaster.com" />
+        <span>Quản trị </span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <a class="dropdown-item" (click)="changePassword()">
+          <i class="fa fa-shield"></i> Đổi mật khẩu</a>
+        <a class="dropdown-item" [routerLink]="['/login/logout']">
+          <i class="fa fa-lock"></i> Thoát</a>
+      </div>
+    </li>
+  </ul>
+</header>

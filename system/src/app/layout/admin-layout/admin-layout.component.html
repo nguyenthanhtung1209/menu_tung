@@ -1,0 +1,22 @@
+<!-- Header-->
+<div id="app-loading"></div>
+<app-header></app-header>
+<div class="app-body">
+  <!-- Sidebar-->
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <!-- Content -->
+  <main class="main">
+    <!-- Breadcrumb -->
+    <ol class="breadcrumb">
+      <app-breadcrumbs></app-breadcrumbs>
+    </ol>
+    <!-- Main Conainer -->
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<!-- Footer -->
+<app-footer></app-footer>

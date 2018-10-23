@@ -1,0 +1,60 @@
+<!-- loading layout replaced by app after startupp -->
+<div id="app-loading"></div>
+  <div class="login-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="login-content col-md-4 col-md-offset-4 col-sm-offset-3 col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="text-center">đăng nhập hệ thống</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="site-login">
+                            <div class="row">
+                                <img src="./assets/img/logo.jpg" alt="" class="img-logo">
+                            </div>
+                            <form (submit)="login($event)">
+                            <div class="row content-login">
+                                <div class="col-md-12">
+                                    <dx-form id="form"
+                                    validationGroup="userData"
+                                    [showValidationSummary]="true"
+                                    [colCount]="1"
+                                    [formData]="user">
+                                    <dxi-item [label]="{text: 'Tên đăng nhập'}" dataField="UserName">
+                                        <dxi-validation-rule 
+                                            type="required"
+                                            message="Tên đăng nhập bắt buộc phải nhập">
+                                        </dxi-validation-rule>
+                                    </dxi-item>
+                                    <dxi-item [label]="{text: 'Mật khẩu'}" dataField="Password"
+                                        [editorOptions]="{ mode: 'password' }">
+                                        <dxi-validation-rule 
+                                            type="required"
+                                            message="Mật khẩu bắt buộc phải nhập">
+                                        </dxi-validation-rule>
+                                    </dxi-item>
+                                </dx-form>
+                                <br>
+                                <div *ngIf="errorLogin;">
+                                    <div class="dx-item dx-validationsummary-item"><div class="dx-item-content dx-validationsummary-item-content">Tên hoặc mật khẩu chưa đúng!</div></div>
+                                    <br>
+                                </div>
+                                <div class="text-center" >
+                                    <dx-button
+                                        text="Đăng nhập"
+                                        type="default"
+                                        validationGroup="userData"
+                                        [useSubmitBehavior]="true">
+                                    </dx-button>
+                                </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
